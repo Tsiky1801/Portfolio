@@ -139,8 +139,8 @@ body {
 
 /* TEXTE */
 .big-name {
-    font-size: 60px;
-    font-weight: 800;
+    font-size: 40px;
+    font-weight: 700;
     color: #2efcff;
     text-shadow: 0 0 30px #ff2e63;
 }
