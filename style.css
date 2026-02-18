@@ -1,0 +1,245 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: white;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: fixed;
+    width: 100%;
+    background: rgba(15,23,42,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: 800;
+    color: #ff2e63;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff2e63;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+/* FORMES FLOTTANTES */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.5;
+}
+
+.shape1 {
+    width: 300px;
+    height: 300px;
+    background: #ff2e63;
+    top: 10%;
+    left: 10%;
+}
+
+.shape2 {
+    width: 250px;
+    height: 250px;
+    background: #00ff88;
+    bottom: 10%;
+    right: 10%;
+}
+
+/* IMAGE */
+.image-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 40px #ff2e63,
+        0 0 80px #ff2e63,
+        0 0 120px #00ff88;
+    animation: float 4s ease-in-out infinite;
+}
+
+.image-wrapper img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.image-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+     border-radius: 50%;
+    background: conic-gradient(#2eeeff,#00ddff,#2edcff);
+    animation: rotate 4s linear infinite;
+    z-index: 1;
+}
+
+.image-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #0f172a;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* TEXTE */
+.big-name {
+    font-size: 60px;
+    font-weight: 800;
+    color: #2efcff;
+    text-shadow: 0 0 30px #ff2e63;
+}
+
+.hero-text h2 {
+    margin: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff2e63;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 0 20px #ff2e63;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
+.section {
+    padding: 120px 50px;
+    text-align: center;
+    background: #1e293b;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: #ff2e63;
+}
+
+/* CONTACT */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    background: #ff2e63;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .big-name {
+        font-size: 50px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+
+
