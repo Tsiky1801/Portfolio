@@ -18,10 +18,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 60px;
+    padding: 15px 0;
     position: fixed;
     width: 100%;
-    background: rgba(15,23,42,0.8);
+    background: rgba(10, 10, 30, 0.85);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
@@ -140,7 +140,7 @@ body {
 /* TEXTE */
 .big-name {
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 400;
     color: #2efcff;
     text-shadow: 0 0 30px #ff2e63;
 }
@@ -213,10 +213,18 @@ button {
 }
 
 /* RESPONSIVE */
-@media(max-width:768px) {
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 220px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
     }
 
     .big-name {
