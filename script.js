@@ -1,30 +1,30 @@
-// MENU MOBILE
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+// Animation au scroll
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:0.2});
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+document.querySelectorAll(".fade-up, .fade-left").forEach(el=>{
+observer.observe(el);
 });
 
-// ACTIVE LINK
-const links = document.querySelectorAll(".nav-links a");
+// EMAILJS
+(function(){
+emailjs.init("TON_PUBLIC_KEY"); // 🔥 remplacer
+})();
 
-links.forEach(link => {
-    link.addEventListener("click", function () {
-        links.forEach(l => l.classList.remove("active"));
-        this.classList.add("active");
-        navLinks.classList.remove("show");
-    });
+document.getElementById("contact-form")
+.addEventListener("submit",function(e){
+e.preventDefault();
+
+emailjs.sendForm("TON_SERVICE_ID","TON_TEMPLATE_ID",this)
+.then(()=>{
+alert("Message envoyé avec succès !");
+})
+.catch(()=>{
+alert("Erreur d'envoi.");
 });
-
-// ANIMATION AU SCROLL
-const sections = document.querySelectorAll(".section");
-
-window.addEventListener("scroll", () => {
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if(sectionTop < window.innerHeight - 100){
-            section.classList.add("show");
-        }
-    });
 });
