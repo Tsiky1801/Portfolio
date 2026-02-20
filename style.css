@@ -1,10 +1,9 @@
 :root {
-    --color-pink: #ff1a75;
-    --color-dark: #0a0a0a;
-    --color-light: #ffffff;
-    --color-grey: #cccccc;
-    --font-primary: 'Poppins', sans-serif;
-    --border-radius: 6px;
+    --pink: #ff1a75;
+    --dark: #0a0a0a;
+    --light: #ffffff;
+    --grey: #cccccc;
+    --font: 'Poppins', sans-serif;
 }
 
 * {
@@ -13,21 +12,25 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: var(--font-primary);
-    background: var(--color-pink);
+    font-family: var(--font);
+    background: var(--pink);
     display: flex;
     justify-content: center;
     padding: 20px;
 }
 
 .portfolio-container {
-    background: var(--color-dark);
+    background: var(--dark);
     width: 100%;
     max-width: 1200px;
     border-radius: 20px;
     padding: 40px;
-    color: var(--color-light);
+    color: white;
 }
 
 /* HEADER */
@@ -40,8 +43,7 @@ header {
 
 .logo {
     font-weight: 800;
-    color: var(--color-pink);
-    font-size: 1.2rem;
+    color: var(--pink);
 }
 
 .nav-links {
@@ -59,7 +61,7 @@ header {
 
 .nav-links a:hover,
 .nav-links .active {
-    color: var(--color-pink);
+    color: var(--pink);
 }
 
 .hamburger {
@@ -68,100 +70,116 @@ header {
     cursor: pointer;
 }
 
+/* SECTIONS */
+
+.section {
+    margin-top: 100px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--pink);
+}
+
 /* HERO */
 
 .hero-section {
     display: flex;
     align-items: center;
     gap: 60px;
-    margin-top: 60px;
 }
 
 .profile-container {
-    flex: 0 0 350px;
+    width: 300px;
+    height: 300px;
 }
 
 .profile-container img {
     width: 100%;
-    border-radius: 50%;
-    border: 4px solid var(--color-pink);
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.subtitle {
-    color: var(--color-pink);
-    font-size: 1.2rem;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* parfaitement rond */
+    border: 4px solid var(--pink);
 }
 
 .name-title {
     font-size: 4rem;
-    font-weight: 900;
     margin: 20px 0;
 }
 
+.subtitle {
+    color: var(--pink);
+}
+
 .description {
-    color: var(--color-grey);
-    line-height: 1.6;
+    color: var(--grey);
     margin-bottom: 30px;
 }
 
-.subscribe-form {
+/* BUTTONS */
+
+.buttons {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
-.subscribe-form input {
-    flex: 1;
-    padding: 12px;
-    border-radius: var(--border-radius);
-    border: none;
-    outline: none;
-}
-
-.subscribe-form button {
+.btn {
     padding: 12px 25px;
-    border: none;
-    background: var(--color-pink);
+    background: var(--pink);
     color: white;
-    font-weight: 600;
-    border-radius: var(--border-radius);
-    cursor: pointer;
+    text-decoration: none;
+    border-radius: 6px;
     transition: 0.3s;
 }
 
-.subscribe-form button:hover {
+.btn:hover {
     background: #e6005c;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--pink);
+}
+
+/* CONTACT */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+}
+
+.contact-form textarea {
+    min-height: 120px;
 }
 
 /* FOOTER */
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 60px;
-    border-top: 1px solid #333;
-    padding-top: 20px;
+    margin-top: 100px;
+    text-align: center;
+    color: var(--grey);
 }
 
-.social-links a {
-    margin-right: 15px;
-    color: var(--color-pink);
-    text-decoration: none;
-}
+/* RESPONSIVE */
 
-.website-link {
-    color: var(--color-pink);
-    text-decoration: none;
-}
-
-/* ========================= */
-/* 📱 RESPONSIVE MOBILE */
-/* ========================= */
-
-@media (max-width: 768px) {
+@media(max-width: 768px) {
 
     .hero-section {
         flex-direction: column;
@@ -169,22 +187,18 @@ footer {
     }
 
     .profile-container {
-        flex: none;
         width: 200px;
+        height: 200px;
     }
 
     .name-title {
         font-size: 2.5rem;
     }
 
-    .subscribe-form {
-        flex-direction: column;
-    }
-
     .nav-links {
         position: absolute;
-        top: 80px;
         right: 40px;
+        top: 80px;
         background: #111;
         flex-direction: column;
         padding: 20px;
@@ -198,5 +212,10 @@ footer {
 
     .hamburger {
         display: block;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }
