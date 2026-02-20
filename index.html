@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+
+        
+     <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio | Développeur Web</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,55 +17,76 @@
     <header>
         <div class="logo">MonPortfolio.</div>
 
-        <nav id="nav">
+        <nav>
             <ul class="nav-links">
-                <li><a href="#" class="active">Accueil</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Localisation</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home" class="active">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#location">Localisation</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
-        <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-            ☰
-        </div>
+        <div class="hamburger">☰</div>
     </header>
 
-    <section class="hero-section">
+    <!-- ================== HOME ================== -->
+    <section id="home" class="section hero-section">
 
         <div class="profile-container">
-            <img src="tsiky.jpg" alt="Photo de profil">
+            <img src="tsiky.jpg" alt="Photo profil">
         </div>
 
         <div class="hero-content">
             <span class="subtitle">Développeur Web Full-Stack</span>
 
-            <h1 class="name-title">
-                NAMBINTSOA Tsiky Fanantenama
-            </h1>
+            <h1 class="name-title">NAMBINTSOA Tsiky Fanantenana</h1>
 
             <p class="description">
-                Développeur passionné spécialisé dans la création de sites modernes,
-                rapides et responsive. Je transforme vos idées en expériences digitales professionnelles.
+                Je développe des sites web modernes, rapides et responsive.
+                Passionné par le design et la performance.
             </p>
 
-            <form class="subscribe-form">
-                <input type="email" placeholder="Votre email..." required>
-                <button type="submit">Me Contacter</button>
-            </form>
+            <div class="buttons">
+                <a href="#contact" class="btn">Me Contacter</a>
+                <a href="cv.pdf" download class="btn btn-outline">Télécharger CV</a>
+            </div>
         </div>
 
     </section>
 
-    <footer>
-        <div class="social-links">
-            <a href="#">IG</a>
-            <a href="#">FB</a>
-            <a href="#">TW</a>
-        </div>
+    <!-- ================== ABOUT ================== -->
+    <section id="about" class="section">
+        <h2>À propos</h2>
+        <p>
+             Je suis étudiant passionné par le développement web et mobile.
+        J'aime créer des interfaces modernes, responsives et interactives.
+        Actuellement en formation, je développe mes compétences en HTML, CSS,
+        JavaScript et frameworks modernes afin de devenir développeur professionnel.
 
-        <a href="#" class="website-link">tsikynambs@gmail.com</a>
+        </p>
+    </section>
+
+    <!-- ================== LOCATION ================== -->
+    <section id="location" class="section">
+        <h2>Localisation</h2>
+        <p>Basé à FIANARANTSOA, Madagascar. Disponible pour projets freelance et CDI.</p>
+    </section>
+
+    <!-- ================== CONTACT ================== -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Votre nom" required>
+            <input type="email" placeholder="Votre email" required>
+            <textarea placeholder="Votre message" required></textarea>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        </p> Email: tsikynambs@gmail.com / Num:0389791195  </p>
+        <p>© 2026 MonPortfolio - Tous droits réservés</p>
     </footer>
 
 </div>
