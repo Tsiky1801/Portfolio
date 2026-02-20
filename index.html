@@ -2,99 +2,74 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio - NAMBININTSOA Tsiky Fanantenana</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio | Développeur Web</title>
 
     <!-- Google Font -->
-    <link href="https:// " rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">NAMBININTSOA Tsiky Fanantenana</div>
-        <ul class="nav-links">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#location">Localisation</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<div class="portfolio-container">
 
-    <!-- HERO -->
-    <section id="home" class="hero">
+    <header>
+        <div class="logo">MonPortfolio.</div>
 
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
+        <nav id="nav">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Accueil</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Localisation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
 
-        <div class="hero-container">
-
-            <div class="image-wrapper">
-                <img src="tsiky.jpg" alt="photo">
-            </div>
-
-            <div class="hero-text">
-                <h1 class="big-name">NAMBININTSOA Tsiky Fanantenana</h1>
-                <h2>Développeur Web & Mobile</h2>
-                <p>Je développe des expériences web modernes et interactives.</p>
-                <a href="#contact" class="btn">Me Contacter</a>
-            </div>
-
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+            ☰
         </div>
+    </header>
+
+    <section class="hero-section">
+
+        <div class="profile-container">
+            <img src="tsiky.jpg" alt="Photo de profil">
+        </div>
+
+        <div class="hero-content">
+            <span class="subtitle">Développeur Web Full-Stack</span>
+
+            <h1 class="name-title">
+                NAMBINTSOA Tsiky Fanantenama
+            </h1>
+
+            <p class="description">
+                Développeur passionné spécialisé dans la création de sites modernes,
+                rapides et responsive. Je transforme vos idées en expériences digitales professionnelles.
+            </p>
+
+            <form class="subscribe-form">
+                <input type="email" placeholder="Votre email..." required>
+                <button type="submit">Me Contacter</button>
+            </form>
+        </div>
+
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <h2>À propos</h2>
-        <p>
-            je suis étudiant en développement web, passionné par la création
-            d'applications et de sites internet modernes, performants et responsive.
-            Au cours de ma formation, j'ai acquis des bases solides en HTML, CSS et JavaScript,
-            et je continue à développer mes compétences en frontend et backend.
+    <footer>
+        <div class="social-links">
+            <a href="#">IG</a>
+            <a href="#">FB</a>
+            <a href="#">TW</a>
+        </div>
 
-            Curieux, motivé et rigoureux, j'aime transformer des idées en solutions digitales concrètes.
-            Mon objectif est de progresser chaque jour, participer à des projets innovants
-            et évoluer vers un profil de développeur full stack confirmé.
-        <p>
-    </section>
+        <a href="#" class="website-link">tsikynambs@gmail.com</a>
+    </footer>
 
-    <!-- LOCATION -->
-    <section id="location" class="section">
-  <h2>Localisation</h2>
-  <p>
-    Basé à FIANARANTSOA, Madagascar.
-    Disponible pour stage, alternance ou projets en télétravail.
-  </p>
+</div>
 
-  <iframe 
-  src="https://www.google.com/maps?q=Fanarantsoa&output=embed"
-  width="100%" 
-  height="300"
-  style="border-radius:20px; margin-top:20px;">
-  </iframe>
-</section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <form>
-            <input type="text" placeholder="Nom" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message"></textarea>
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
-
-    <!-- JS -->
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-    
