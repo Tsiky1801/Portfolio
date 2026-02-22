@@ -278,12 +278,34 @@ function initCV() {
   buttons.forEach(btn => {
     btn.addEventListener("click", function(e) {
       e.preventDefault();
-      const link = document.createElement("a");
-      link.href = PROFILE.cvBase64;
-      link.download = "CV_NAMBININTSOA_Tsiky_Fanantenana.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      try {
+        // Convertir base64 en Blob (marche sur mobile)
+        const base64Data = PROFILE.cvBase64.split(',')[1];
+        const byteChars = atob(base64Data);
+        const byteNums = new Array(byteChars.length);
+        for (let i = 0; i < byteChars.length; i++) {
+          byteNums[i] = byteChars.charCodeAt(i);
+        }
+        const byteArray = new Uint8Array(byteNums);
+        const blob = new Blob([byteArray], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+
+        // Ouvrir dans nouvel onglet (marche sur iOS/Android)
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'CV_NAMBININTSOA_Tsiky_Fanantenana.pdf';
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        // Libérer mémoire après 3 secondes
+        setTimeout(() => URL.revokeObjectURL(url), 3000);
+      } catch(err) {
+        // Fallback : ouvrir directement le PDF dans le navigateur
+        const base64Data = PROFILE.cvBase64;
+        window.open(base64Data, '_blank');
+      }
     });
   });
 }
