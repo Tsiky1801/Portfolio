@@ -1,114 +1,195 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio 2026 | Développeur Web</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de NAMBINITSOA Tsiky Fanantenana — Développeur Web Junior" />
+  <title>NAMBINITSOA Tsiky Fanantenana — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    <div class="logo">MONPORTFOLIO</div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#location">Localisation</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="hamburger">☰</div>
-</header>
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" id="theme-toggle" title="Mode clair/sombre">🌙</button>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">NAMBS<span>.</span>DEV</a>
+  <ul id="nav-menu">
+    <li><a href="#hero">Accueil</a></li>
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="cv.pdf" class="nav-cv-btn" download="CV_NAMBINITSOA.pdf">⬇ Télécharger CV</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
 <!-- HERO -->
-<section id="home" class="section hero">
-    <div class="hero-text fade-up">
-        <h1>NAMBININTSOA Tsiky Fanantenana</h1>
-        <p>Développeur Web junior & créatif</p>
+<section id="hero">
+  <div class="hero-badge"><div class="badge-dot"></div>Étudiant sérieux &amp; passionné</div>
 
-        <div class="buttons">
-            <a href="#contact" class="btn">Me contacter</a>
-            <a href="tsiky.pdf" download class="btn-outline">Télécharger CV</a>
-        </div>
+  <div class="hero-name-row">
+    <div class="hero-photo-inline">
+      <div class="profile-container">
+        <div class="ring-outer"></div>
+        <div class="ring-mid"></div>
+        <div class="ring-inner"></div>
+        <div class="profile-img-wrap" id="profile-img-wrap"></div>
+        <div class="profile-badge">Dev Web Junior ✨</div>
+      </div>
     </div>
-
-    <div class="profile fade-left">
-        <img src="tsiky.jpg" alt="Profil">
+    <div class="hero-left">
+      <p class="hero-greeting">Bonjour, je suis</p>
+      <h1 class="hero-name">
+        <span class="highlight" id="name-line1"></span><br>
+        <span id="name-line2" class="name-line2"></span>
+      </h1>
+      <p class="hero-role">🚀 Développeur Web Junior</p>
+      <p class="hero-school"><strong>EMIT — Université de Fianarantsoa</strong> &nbsp;|&nbsp; L1 Informatique · DA2I</p>
     </div>
-</section>
+  </div>
 
-<!-- ABOUT -->
-<section id="about" class="section fade-up">
-    <h2>À propos</h2>
-    <p>
-            
-             Je suis étudiant passionné par le développement web et mobile.
-        J'aime créer des interfaces modernes, responsives et interactives.
-        Actuellement en formation, je développe mes compétences en HTML, CSS,
-        JavaScript et frameworks modernes afin de devenir développeur professionnel.
-    </p>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section">
-    <h2 class="fade-up">Mes Projets</h2>
-
-    <div class="project-grid">
-
-        <div class="project-card fade-up delay-1">
-            <h3>Projet 1</h3>
-            <p>Application web moderne avec React.</p>
-        </div>
-
-        <div class="project-card fade-up delay-2">
-            <h3>Projet 2</h3>
-            <p>Site e-commerce professionnel.</p>
-        </div>
-
-        <div class="project-card fade-up delay-3">
-            <h3>Projet 3</h3>
-            <p>Portfolio animé premium.</p>
-        </div>
-
+  <div class="hero-bottom">
+    <p class="hero-desc">Étudiant de 19 ans, <strong>passionné et sérieux</strong>, je consacre ma formation à maîtriser le développement web et les fondamentaux de l'informatique. Chaque ligne de code est un pas vers mon objectif : devenir un développeur complet et contribuer au numérique à Madagascar.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">🎯 Voir mes projets</a>
+      <a href="#contact" class="btn-secondary">💬 Me contacter</a>
     </div>
+    <div class="hero-socials">
+      <a href="https://github.com/Tsiky1801" class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub @Tsiky1801
+      </a>
+      <a href="https://facebook.com/NAMBINTSOA-Tsiky-Fanantenana" class="social-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- LOCATION -->
-<section id="location" class="section fade-up">
-    <h2>Localisation</h2>
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18..."
-        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
-    </iframe>
+<!-- À PROPOS -->
+<section id="about">
+  <div class="section-header reveal">
+    <div class="section-label">01 — À propos</div>
+    <h2 class="section-title">Qui suis-je <span>?</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="about-grid">
+    <div class="about-photo-col">
+      <div class="about-school-card reveal">
+        <div class="school-img-wrap" id="school-img-wrap"></div>
+        <div class="school-info-bar">
+          <div class="school-name">EMIT — École de Management et d'Innovation Technologique</div>
+          <div class="school-detail">
+            <strong>Université de Fianarantsoa</strong><br>
+            Filière : Informatique · DA2I &nbsp;|&nbsp; Niveau : L1<br>
+            Fianarantsoa, Madagascar
+          </div>
+        </div>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-box"><span class="stat-num" data-target="10">0</span><div class="stat-label">Compétences</div></div>
+        <div class="stat-box"><span class="stat-num" data-target="3">0</span><div class="stat-label">Projets</div></div>
+        <div class="stat-box"><span class="stat-num" data-target="19">0</span><div class="stat-label">Ans</div></div>
+        <div class="stat-box"><span class="stat-num" data-target="100">0</span><div class="stat-label">% Motivation</div></div>
+      </div>
+    </div>
+    <div class="about-text-col reveal">
+      <p class="about-intro">"Coder, c'est construire l'avenir — ligne par ligne."</p>
+      <p>Je m'appelle <strong>NAMBINITSOA Tsiky Fanantenana</strong>, j'ai <em>19 ans</em> et je suis étudiant en Licence 1 Informatique, spécialité <strong>DA2I</strong> à l'<em>EMIT</em> de l'Université de Fianarantsoa, Madagascar.</p>
+      <p>En tant que <strong>développeur web junior</strong>, je m'investis chaque jour dans l'apprentissage du développement front-end et back-end. HTML, CSS, JavaScript, Python et C sont mes outils quotidiens.</p>
+      <p>Mon ambition : contribuer au <em>développement numérique de Madagascar</em> et devenir un développeur full-stack reconnu.</p>
+      <div class="about-identity">
+        <div class="identity-item"><span class="identity-key">👤 Nom</span><span class="identity-val">NAMBINITSOA Tsiky Fanantenana</span></div>
+        <div class="identity-item"><span class="identity-key">🎂 Âge</span><span class="identity-val">19 ans</span></div>
+        <div class="identity-item"><span class="identity-key">✉️ Email</span><span class="identity-val"><a href="mailto:tsikynamb@gmail.com">tsikynamb@gmail.com</a></span></div>
+        <div class="identity-item"><span class="identity-key">📱 Téléphone</span><span class="identity-val">038 979 11 95 / 038 421 31 52</span></div>
+        <div class="identity-item"><span class="identity-key">📘 Facebook</span><span class="identity-val"><a href="https://facebook.com/NAMBINTSOA-Tsiky-Fanantenana" target="_blank">NAMBINTSOA Tsiky</a></span></div>
+        <div class="identity-item"><span class="identity-key">🐙 GitHub</span><span class="identity-val"><a href="https://github.com/Tsiky1801" target="_blank">@Tsiky1801</a></span></div>
+        <div class="identity-item"><span class="identity-key">📍 Lieu</span><span class="identity-val">Fianarantsoa, Madagascar</span></div>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <a href="cv.pdf" class="btn-primary" download="CV_NAMBINITSOA_Tsiky_Fanantenana.pdf">⬇️ Télécharger mon CV</a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- COMPÉTENCES -->
+<section id="skills">
+  <div class="section-header reveal">
+    <div class="section-label">02 — Compétences</div>
+    <h2 class="section-title">Ce que je <span>maîtrise</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="skills-grid" id="skills-grid"></div>
+</section>
+
+<!-- PROJETS -->
+<section id="projects" class="projects-section">
+  <div class="section-header reveal">
+    <div class="section-label">03 — Projets</div>
+    <h2 class="section-title">Mes <span>réalisations</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="projects-grid" id="projects-grid"></div>
+</section>
+
+<!-- CV SECTION -->
+<div class="cv-section reveal">
+  <div class="cv-text">
+    <h3>📄 Téléchargez mon CV complet</h3>
+    <p>Retrouvez toutes mes compétences, formations et expériences dans mon curriculum vitae.</p>
+  </div>
+  <a href="cv.pdf" class="btn-primary" download="CV_NAMBINITSOA_Tsiky_Fanantenana.pdf">⬇ Télécharger le CV PDF</a>
+</div>
 
 <!-- CONTACT -->
-<section id="contact" class="section fade-up">
-    <h2>Contact</h2>
-
-    <form id="contact-form">
-        <input type="text" name="user_name" placeholder="Votre nom" required>
-        <input type="email" name="user_email" placeholder="Votre email" required>
-        <textarea name="message" placeholder="Votre message" required></textarea>
-        <button type="submit" class="btn">Envoyer</button>
+<section id="contact">
+  <div class="section-header reveal">
+    <div class="section-label">04 — Contact</div>
+    <h2 class="section-title">Me <span>contacter</span></h2>
+    <span class="section-line"></span>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Travaillons ensemble ! 🤝</h3>
+      <p>Vous avez un projet, une question ou une opportunité de stage ? Je suis disponible et prêt à échanger.</p>
+      <div class="contact-items" id="contact-info-items"></div>
+    </div>
+    <form class="contact-form reveal" id="contact-form">
+      <div class="form-row">
+        <div class="form-group"><label>Votre nom *</label><input type="text" name="nom" placeholder="Rakoto Jean" required /></div>
+        <div class="form-group"><label>Votre email *</label><input type="email" name="email" placeholder="email@exemple.com" required /></div>
+      </div>
+      <div class="form-group"><label>Sujet *</label><input type="text" name="sujet" placeholder="ex: Proposition de stage..." required /></div>
+      <div class="form-group"><label>Message *</label><textarea name="message" rows="5" placeholder="Décrivez votre demande..." required></textarea></div>
+      <div class="form-success" id="form-success">✅ Message envoyé ! Je vous répondrai bientôt.</div>
+      <button type="submit" class="btn-primary" style="border:none;width:100%;justify-content:center;">Envoyer 🚀</button>
     </form>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    © 2026 - Portfolio Premium
+  <div class="footer-logo">NAMBS<span>.</span>DEV</div>
+  <div class="footer-copy">© 2026 <strong>NAMBINITSOA Tsiky Fanantenana</strong> — EMIT Fianarantsoa, Madagascar<br>L1 Informatique · DA2I</div>
+  <div class="footer-socials">
+    <a href="https://github.com/Tsiky1801" class="footer-social" target="_blank">🐙</a>
+    <a href="https://facebook.com/NAMBINTSOA-Tsiky-Fanantenana" class="footer-social" target="_blank">📘</a>
+    <a href="mailto:tsikynamb@gmail.com" class="footer-social">✉️</a>
+  </div>
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
