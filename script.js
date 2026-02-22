@@ -1,11 +1,11 @@
 /* ============================================================
-   PORTFOLIO — NAMBINITSOA Tsiky Fanantenana
+   PORTFOLIO — NAMBININTSOA Tsiky Fanantenana
    script.js
    ============================================================ */
 
 // ── DONNÉES ──────────────────────────────────────────────────
 const PROFILE = {
-  nom:        "NAMBINITSOA Tsiky Fanantenana",
+  nom:        "NAMBININTSOA Tsiky Fanantenana",
   age:        19,
   email:      "tsikynamb@gmail.com",
   tel1:       "+261 38 979 11 95",
@@ -99,38 +99,9 @@ function initTheme() {
   });
 }
 
-// ── CURSOR (PC seulement) ─────────────────────────────────────
+// ── CURSOR désactivé — curseur flèche normal ─────────────────
 function initCursor() {
-  const cursor = document.getElementById("cursor");
-  const ring   = document.getElementById("cursor-ring");
-  if (!cursor || !ring) return;
-  // Seulement si souris (pointer: fine)
-  if (!window.matchMedia("(pointer: fine)").matches) return;
-
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY; });
-
-  function loop() {
-    rx += (mx - rx) * 0.15;
-    ry += (my - ry) * 0.15;
-    cursor.style.left = mx + "px"; cursor.style.top = my + "px";
-    ring.style.left   = rx + "px"; ring.style.top  = ry + "px";
-    requestAnimationFrame(loop);
-  }
-  loop();
-
-  document.querySelectorAll("a, button, .skill-card, .project-card").forEach(el => {
-    el.addEventListener("mouseenter", () => {
-      cursor.style.transform = "translate(-50%,-50%) scale(2.5)";
-      cursor.style.background = "var(--sky)";
-      ring.style.transform = "translate(-50%,-50%) scale(1.5)";
-    });
-    el.addEventListener("mouseleave", () => {
-      cursor.style.transform = "translate(-50%,-50%) scale(1)";
-      cursor.style.background = "var(--red)";
-      ring.style.transform = "translate(-50%,-50%) scale(1)";
-    });
-  });
+  // Curseur normal du navigateur utilisé
 }
 
 // ── NAVIGATION ────────────────────────────────────────────────
@@ -141,6 +112,17 @@ function initNav() {
 
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 50);
+    // Marquer le lien actif selon la section visible
+    const sections = document.querySelectorAll("section[id], div[id]");
+    const links = document.querySelectorAll("#nav-menu a");
+    let current = "";
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    links.forEach(a => {
+      a.classList.remove("active");
+      if (a.getAttribute("href") === "#" + current) a.classList.add("active");
+    });
   });
 
   hamburger.addEventListener("click", () => {
@@ -171,7 +153,7 @@ function animateName() {
   const line2El = document.getElementById("name-line2");
   if (!line1El || !line2El) return;
 
-  const line1 = "NAMBINITSOA";
+  const line1 = "NAMBININTSOA";
   const line2 = "Tsiky Fanantenana";
 
   function buildLetters(text, baseDelay) {
