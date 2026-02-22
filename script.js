@@ -106,38 +106,51 @@ function initCursor() {
 
 // ── NAVIGATION ────────────────────────────────────────────────
 function initNav() {
-  const nav   = document.getElementById("navbar");
+  const nav       = document.getElementById("navbar");
   const hamburger = document.getElementById("hamburger");
-  const menu  = document.getElementById("nav-menu");
+  const menu      = document.getElementById("nav-menu");
 
+  if (!nav || !hamburger || !menu) return;
+
+  // Scroll shadow
   window.addEventListener("scroll", () => {
     nav.classList.toggle("scrolled", window.scrollY > 50);
-    // Marquer le lien actif selon la section visible
-    const sections = document.querySelectorAll("section[id], div[id]");
-    const links = document.querySelectorAll("#nav-menu a");
-    let current = "";
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
-    });
-    links.forEach(a => {
-      a.classList.remove("active");
-      if (a.getAttribute("href") === "#" + current) a.classList.add("active");
-    });
   });
 
+  // Hamburger toggle
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    menu.classList.toggle("open");
+    const isOpen = !menu.classList.contains("open");
+    if (isOpen) {
+      menu.classList.add("open");
+      hamburger.classList.add("open");
+      document.body.style.overflow = "hidden";
+    } else {
+      menu.classList.remove("open");
+      hamburger.classList.remove("open");
+      document.body.style.overflow = "";
+    }
   });
 
-  // Fermer menu au clic sur lien
+  // Fermer au clic sur lien
   menu.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
-      hamburger.classList.remove("open");
       menu.classList.remove("open");
+      hamburger.classList.remove("open");
+      document.body.style.overflow = "";
     });
   });
+
+  // Fermer avec Echap
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      menu.classList.remove("open");
+      hamburger.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+  });
 }
+
+
 
 // Fermer menu (appelé depuis HTML)
 function closeMenu() {
