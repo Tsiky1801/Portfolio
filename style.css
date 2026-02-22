@@ -391,7 +391,7 @@ nav a:hover::after { right:0; }
 /* ── PROFIL ─────────────────────────────────────────────────── */
 .profile-container {
   position: relative;
-  width: 210px; height: 210px;
+  width: 300px; height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -405,19 +405,27 @@ nav a:hover::after { right:0; }
 .ring-outer {
   width: 100%; height: 100%;
   border-top-color: var(--red);
-  border-right-color: rgba(227,28,37,0.2);
+  border-right-color: rgba(227,28,37,0.3);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
   animation: spin 8s linear infinite;
+  filter: drop-shadow(0 0 6px var(--red));
 }
 .ring-mid {
-  width: 85%; height: 85%;
+  width: 87%; height: 87%;
   border-bottom-color: var(--sky);
-  border-left-color: rgba(59,158,221,0.2);
+  border-left-color: rgba(59,158,221,0.4);
+  border-top-color: transparent;
+  border-right-color: transparent;
   animation: spin 5s linear infinite reverse;
+  filter: drop-shadow(0 0 4px var(--sky));
 }
 .ring-inner {
-  width: 70%; height: 70%;
-  border-top-color: rgba(227,28,37,0.5);
+  width: 74%; height: 74%;
+  border-top-color: rgba(227,28,37,0.6);
   border-right-color: var(--sky);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
   animation: spin 3s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -904,17 +912,19 @@ footer {
     display: none;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--nav-bg);
-    backdrop-filter: blur(20px);
+    background: #0a1628;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     z-index: 99;
   }
+  body.dark-mode nav ul { background: #04060f; }
   nav ul.open { display: flex; }
-  nav ul li a { font-size: 1.1rem; }
+  nav ul li a { font-size: 1.2rem; color: #ffffff !important; }
+  nav ul li a:hover { color: var(--red) !important; }
   .hamburger { display: flex; z-index: 101; position: relative; }
+  .hamburger span { background: var(--text); }
 
   /* Hero mobile */
   #hero { padding: 6rem 1.5rem 3rem; gap: 1.5rem; }
@@ -930,7 +940,7 @@ footer {
   .hero-socials { justify-content: center; }
   .hero-badge { margin: 0 auto; }
 
-  .profile-container { width: 170px; height: 170px; }
+  .profile-container { width: 240px; height: 240px; }
 
   /* Sections */
   section { padding: 4rem 1.5rem; }
@@ -952,6 +962,75 @@ footer {
   .hero-btns a { justify-content: center; text-align: center; }
   .skills-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 1.8rem; }
-  .profile-container { width: 150px; height: 150px; }
+  .profile-container { width: 240px; height: 240px; }
   .profile-badge { font-size: 0.5rem; padding: 0.25rem 0.55rem; }
-} 
+}
+
+/* ── LOCALISATION ───────────────────────────────────────────── */
+.localisation-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.localisation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.localisation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.loc-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: var(--shadow);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.loc-card:hover {
+  border-color: var(--red);
+  transform: translateX(5px);
+}
+
+.loc-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.loc-details h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.loc-details p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.localisation-map {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .localisation-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .localisation-map iframe { height: 250px; }
+}
