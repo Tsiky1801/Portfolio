@@ -389,7 +389,7 @@ body.dark-mode .highlight { color: #ffffff; }
 }
 /* Cercle milieu — bleu solide avec point */
 .ring-mid {
-  width: 102%; height: 102%;
+  width: 105%; height: 105%;
   border: 2px solid rgba(59,158,221,0.6);
   animation: spin 7s linear infinite reverse;
   box-shadow: 0 0 12px rgba(59,158,221,0.2);
@@ -405,7 +405,7 @@ body.dark-mode .highlight { color: #ffffff; }
 }
 /* Cercle intérieur — rouge tireté fin */
 .ring-inner {
-  width: 95%; height: 95%;
+  width: 99%; height: 99%;
   border: 1px dashed rgba(227,28,37,0.35);
   animation: spin 4s linear infinite;
 }
