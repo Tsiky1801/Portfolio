@@ -360,7 +360,7 @@ body.dark-mode .highlight { color: #ffffff; }
 /* ── PROFIL ─────────────────────────────────────────────────── */
 .profile-container {
   position: relative;
-  width: 300px; height: 300px;
+  width: 340px; height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -950,7 +950,7 @@ footer {
   .hero-btns { justify-content: center; }
   .hero-socials { justify-content: center; }
   .hero-badge { margin: 0 auto; }
-  .profile-container { width: 240px; height: 240px; }
+  .profile-container { width: 280px; height: 280px; }
 
   /* Sections */
   section { padding: 4rem 1.5rem; }
@@ -975,7 +975,7 @@ footer {
   .hero-btns a { justify-content: center; text-align: center; }
   .skills-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 1.8rem; }
-  .profile-container { width: 240px; height: 240px; }
+  .profile-container { width: 280px; height: 280px; }
   .profile-badge { font-size: 0.5rem; padding: 0.25rem 0.55rem; }
 }
 
