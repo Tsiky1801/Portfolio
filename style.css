@@ -372,7 +372,7 @@ body.dark-mode .highlight { color: #ffffff; }
 }
 /* Cercle extérieur — rouge tireté avec point */
 .ring-outer {
-  width: 100%; height: 100%;
+  width: 112%; height: 112%;
   border: 1.5px dashed rgba(227,28,37,0.5);
   animation: spin 12s linear infinite;
   box-shadow: 0 0 15px rgba(227,28,37,0.15);
@@ -389,7 +389,7 @@ body.dark-mode .highlight { color: #ffffff; }
 }
 /* Cercle milieu — bleu solide avec point */
 .ring-mid {
-  width: 87%; height: 87%;
+  width: 100%; height: 100%;
   border: 2px solid rgba(59,158,221,0.6);
   animation: spin 7s linear infinite reverse;
   box-shadow: 0 0 12px rgba(59,158,221,0.2);
@@ -405,7 +405,7 @@ body.dark-mode .highlight { color: #ffffff; }
 }
 /* Cercle intérieur — rouge tireté fin */
 .ring-inner {
-  width: 73%; height: 73%;
+  width: 87%; height: 87%;
   border: 1px dashed rgba(227,28,37,0.35);
   animation: spin 4s linear infinite;
 }
