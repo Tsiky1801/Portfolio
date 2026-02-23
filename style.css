@@ -389,7 +389,7 @@ body.dark-mode .highlight { color: #ffffff; }
 }
 /* Cercle milieu — bleu solide avec point */
 .ring-mid {
-  width: 100%; height: 100%;
+  width: 102%; height: 102%;
   border: 2px solid rgba(59,158,221,0.6);
   animation: spin 7s linear infinite reverse;
   box-shadow: 0 0 12px rgba(59,158,221,0.2);
@@ -405,15 +405,15 @@ body.dark-mode .highlight { color: #ffffff; }
 }
 /* Cercle intérieur — rouge tireté fin */
 .ring-inner {
-  width: 87%; height: 87%;
+  width: 95%; height: 95%;
   border: 1px dashed rgba(227,28,37,0.35);
   animation: spin 4s linear infinite;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 .profile-img-wrap {
-  width: 60%;
-  height: 60%;
+  width: 90%;
+  height: 90%;
   border-radius: 50%;
   overflow: hidden;
   background: var(--card);
