@@ -10,7 +10,7 @@ const PROFILE = {
   email:      "tsikynamb@gmail.com",
   tel1:       "+261 38 979 11 95",
   tel2:       "+261 38 421 31 52",
-  facebook:   "NAMBINTSOA Tsiky Fanantenana",
+  facebook:   "NAMBININTSOA Tsiky Fanantenana",
   facebookUrl:"https://facebook.com/NAMBINTSOA-Tsiky-Fanantenana",
   github:     "Tsiky1801",
   githubUrl:  "https://github.com/Tsiky1801",
